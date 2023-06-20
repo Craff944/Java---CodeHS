@@ -1,0 +1,23 @@
+public class SlideKarel extends Karel
+{
+// "Defining the method"
+private void turnRight()
+{
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    
+}
+
+// "Calling a method"
+turnRight();
+
+    public void run()
+    {
+         move();
+        move();
+        move();
+        turnLeft();
+    }
+    
+}
