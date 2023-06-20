@@ -1,0 +1,71 @@
+public class SuperCleanupKarel extends SuperKarel
+{
+    public void run()
+    {
+        if(frontIsClear())
+        {
+            while(frontIsClear())
+            {
+                cleanRow();
+                upRow();
+            }
+        }
+        else
+        {
+            turnLeft();
+            cleanRow();
+        }
+        goBack();
+    }
+    //this helps Karel clean the row
+    private void cleanRow()
+    {
+        while(frontIsClear())
+        {
+            if(ballsPresent())
+            {
+                takeBall();
+            }
+            move();
+            if(ballsPresent())
+            {
+                takeBall();
+            }
+        }
+    }
+    //this helps Karel go up each of the rows
+    private void upRow()
+    {
+        if(facingEast())
+        {
+            turnLeft();
+            if(frontIsClear())
+            {
+                move();
+                turnLeft();
+            }
+        }
+        else if(facingWest())
+        {
+            turnRight();
+            if(frontIsClear())
+            {
+                move();
+                turnRight();
+            }
+        }
+    }
+    //this helps Karel go back to the start
+    private void goBack()
+    {
+        turnAround();
+        cleanRow();
+        turnLeft();
+        if(frontIsBlocked())
+        {
+            turnAround();
+            cleanRow();
+            turnAround();
+        }
+    }
+}
