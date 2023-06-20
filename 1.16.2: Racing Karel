@@ -1,0 +1,35 @@
+public class RacingKarel extends SuperKarel
+{
+    public void run()
+    {
+        putAllBalls(); 
+        turnLeft();
+        goToBalls();
+        putAllBalls();
+        turnRight();
+        goToBalls();
+        putAllBalls();
+        turnRight();
+        goToBalls();
+        putAllBalls();
+        turnRight();
+        goToBalls();
+        turnAround();
+    }
+    /*Karel putss all the balls down
+    */
+    private void putAllBalls()
+    {
+        for(int i = 0; i < 8; i++)
+        {
+            putBall();
+        }
+    }
+    /*Karel goes to the balls
+    */
+    private void goToBalls()
+    {
+        while(frontIsClear())
+            move();
+    }
+}
