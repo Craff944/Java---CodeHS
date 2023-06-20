@@ -1,0 +1,18 @@
+public class SlideKarel extends Karel
+{
+    public void run()
+    {
+        putBall();
+        move();
+        turnLeft();
+        turnLeft();
+        turnLeft();
+        move();
+        putBall(); 
+        move();
+        turnLeft();
+        move();
+        putBall();
+    }
+    
+}
