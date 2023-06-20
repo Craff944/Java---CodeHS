@@ -1,0 +1,65 @@
+/* 
+ * This program has Karel move 
+ * she puts balls down
+ */
+
+
+public class TwoTowersKarel extends Karel
+{
+	/*
+	*this allows Karel to 
+	*build both towers
+	*Precondition: Karel should be in 
+	*the bottom left facing East
+	*Postcondition: Karel should have built two towers of balls
+	*/
+	public void run()
+	{
+    	move();
+        buildTower();
+        comeDown();
+        move();
+        move();
+        buildTower();
+        move();
+        turnRight();
+	}
+    /*
+    *this allows Karel to turn right
+    *Precondtion: Karel is at the bottom
+    *Postcondtion: Karel is towards the top
+    */
+    private void turnRight()
+    {
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    }
+    /*this allows Karel to turn around
+    *Precondition: Karel needs to turn left twice
+    *Postcondtion: Karel has turned left twice
+    */
+    private void turnAround()
+    {
+        turnLeft();
+        turnLeft();
+    }
+    
+    private void comeDown()
+    {
+        turnAround();
+        move();
+        move();
+        turnLeft();
+    }
+    
+    private void buildTower()
+    {
+        turnLeft();
+        putBall();
+        move();
+        putBall();
+        move();
+        putBall();
+    }
+}
