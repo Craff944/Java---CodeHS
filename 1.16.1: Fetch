@@ -1,0 +1,64 @@
+public class FetchKarel extends SuperKarel
+{
+    public void run()
+    {
+        turnLeft();
+        goUp();
+        fetchBall();
+        goBack();
+        goBackPart2();
+    }
+    private void goUp()
+    {
+         for(int i = 0; i < 4; i++)
+        {
+            move();
+        }
+    }
+    /* This method helps Karel 
+    get to the ball and take it */
+    private void fetchBall()
+    {
+        if(notFacingEast())
+        {
+            turnRight();
+        }
+        while(noBallsPresent())
+        {
+            move();
+        }
+        if(ballsPresent())
+        {
+            takeBall();
+        }
+    }
+    /* This method helps Karel 
+    go back to the start */
+    private void goBack()
+    {
+        move();
+        while(notFacingSouth())
+        {
+            turnRight();
+        }
+        if(facingSouth())
+        {
+            for(int i = 0; i < 4; i++)
+            {
+                move();
+            }
+        }
+    }
+    /* This method helps Karel continue
+    to go back to the start*/
+    private void goBackPart2()
+    {
+        turnRight();
+        move();
+        move();
+        move();
+        turnAround();
+        putBall();
+        
+    }
+}
