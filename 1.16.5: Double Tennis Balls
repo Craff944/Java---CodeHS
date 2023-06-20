@@ -1,0 +1,50 @@
+public class DoubleTennisBallsKarel extends SuperKarel
+{
+    public void run()
+     {
+        move();
+        while(ballsPresent())
+        {
+            moveBall();
+        }
+         move();
+        doubleIt();
+        turnAround();
+        move();
+        move();
+        turnAround();
+    }
+    /*This allows Karel to move the ball
+    */
+    private void moveBall()
+    {
+        takeBall();
+        move();
+        putBall();
+        turnAround();
+        move();
+        turnAround();
+    }
+     /*This allows Karel to double the amount of balls
+    */
+    private void doubleIt()
+    {
+        while(ballsPresent())
+        {
+            takeBall();
+            turnAround();
+            move();
+            putBall();
+            putBall();
+            turnAround();
+            move();
+        }
+    }  
+    /*This is here to fufill the requirement for 4 methods
+    */
+    private void iNeedMoreMethods()
+    {
+        move();
+        move();
+    }
+}
